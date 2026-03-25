@@ -136,12 +136,12 @@ export default function Dining() {
         ))}
       </div>
 
-      {/* Secondary venues */}
-      <div className="max-w-7xl mx-auto px-6 mt-2 grid grid-cols-1 md:grid-cols-2 gap-px" style={{ background: 'rgba(201,169,138,0.3)' }}>
+      {/* Secondary venues — full width, no container */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-px mt-px" style={{ background: 'rgba(201,169,138,0.3)' }}>
         {secondaryVenues.map((venue, i) => (
           <FadeIn key={venue.name} delay={i * 0.1}>
-            <div className="flex gap-0 flex-col" style={{ background: 'var(--cream)' }}>
-              <div className="relative h-48 overflow-hidden">
+            <div className="flex flex-col" style={{ background: 'var(--cream)' }}>
+              <div className="relative overflow-hidden" style={{ height: '320px' }}>
                 <Image
                   src={venue.image}
                   alt={venue.name}
@@ -149,12 +149,12 @@ export default function Dining() {
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute bottom-4 left-6">
-                  <h3 className="font-display text-white text-xl" style={{ fontWeight: 400 }}>{venue.name}</h3>
+                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute bottom-6 left-8">
+                  <h3 className="font-display text-white text-2xl" style={{ fontWeight: 400 }}>{venue.name}</h3>
                 </div>
               </div>
-              <div className="p-8">
+              <div className="px-8 py-7">
                 <p
                   className="font-body text-sm"
                   style={{ color: 'var(--text-secondary)', lineHeight: '1.9', fontSize: '0.8rem' }}
