@@ -14,7 +14,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+          <div className="w-full bg-black text-white text-center text-xs py-2">
+            Built by{" "}
+            <a
+              href="https://cratorai.com/software"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:opacity-80"
+            >
+              Crator AI
+            </a>
+          </div>
+          {children}
+        </body>
     </html>
   );
 }
